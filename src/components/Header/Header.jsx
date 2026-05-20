@@ -9,11 +9,11 @@ export const Header = () => {
     <div className="logo-container">
       <Link to={"/"}>
         <img src={logo} />
-        <span>Reactiva</span>
+        <span>ReactivaMario</span>
       </Link>
     </div>
     <Nav />
   </header>
   );
 
-}
+};

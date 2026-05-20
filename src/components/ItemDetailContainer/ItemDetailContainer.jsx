@@ -3,38 +3,36 @@ import { useParams } from "react-router-dom";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 
 export const ItemDetailContainer = () => {
-const {id} = useParams();
+  const { id } = useParams();
 
-const [itemDetail, setDetail] = useState (null);
-const [loading, setLoading] = useState(true);
+  const [itemDetail, setItemDetail] = useState(null);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    fetch("/data/products.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const item = data.find((element) => String(element.id) === id);
+        if (item) {
+          setItemDetail(item);
+          return;
+        }
 
-useEffect(() => {
-  fetch("/data/products.json")
-  .then(res => res.json())
-  .then((data) => {
-    const item = data.find((element) => string (element.id)===id);
-    if(item){
-      setItemDetail(item);
-      return;
-    }
+        throw new Error("Elemento no encontrado");
+      })
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
+  }, []);
 
-    throw new Error ("Elemento no encontrado");
-  })
-  .catch((err) => console.log(err))
-  .finally(() => setLoading(false));
-}, [id]);
+  if (loading) return <p>Cargando...</p>;
+  if (!itemDetail) return <p>Producto no encontrado</p>;
 
-if (loading) return <p>Cargando...</p>
-if (!itemDetail) return <p>Producto no encontrado</p>
-
-return (
-  <section>
-    <h1>Detalles del producto</h1>
-    <div className="products-container">
-      <ItemDetail item={itemDetail} />
-    </div>
-
-  </section>
-);
+  return (
+    <section>
+      <h1>Detalles del producto</h1>
+      <div className="products-container">
+        <ItemDetail item={itemDetail} />
+      </div>
+    </section>
+  );
 };

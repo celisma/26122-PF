@@ -1,22 +1,19 @@
 import { Link } from "react-router-dom";
+import { Item } from "../Item/Item";
 import "./ItemList.css";
 
-export const ItemList = ({products}) => {
-  // console.log("Products en ItemList",products), para testear si llega bien la props
-
-  if (!products.length){
-    return <p>No hay products</p>
+export const ItemList = ({ products }) => {
+  if (!products.length) {
+    return <p>No hay productos</p>;
   }
 
   return (
     <div className="products-container">
-      {
-        products.map((products) => (
-          <Link to={`/product/${products.id}`} key={product.id}>
-            <Item {...product}/>
-          </Link>
-        ))
-      }
+      {products.map((product) => (
+        <Link to={`/product/${product.id}`} key={product.id}>
+          <Item {...product} />
+        </Link>
+      ))}
     </div>
-  )
+  );
 };
