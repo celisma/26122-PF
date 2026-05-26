@@ -1,5 +1,19 @@
 footer {
   display: flex;
-  justify-content: space-between;
+  justify-content:center;
   align-items: center;
+  border-top: solid black 1px;
+  
 }
+
+footer li img{
+  height: 25px;
+
+}
+
+footer p{
+  
+  justify-content: center;
+}
+
+
