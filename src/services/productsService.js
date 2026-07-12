@@ -1,15 +1,21 @@
-import {collection,  addDoc,  getDocs,  getDoc,  doc,  query,
+import {
+  collection,
+  addDoc,
+  getDocs,
+  getDoc,
+  doc,
+  query,
   where,
 } from "firebase/firestore";
 
-import { db } from"../firebase/config";
+import { db } from "../firebase/config";
 
 //Todas las funciones van a utilizar esta coleccion.
 //La hacemos global y que todas la usen en vez defirla varias veces
 // Creamos la referencia a la coleccion: en mi caso se llama "products"
 const productsRef = collection(db, "products");
 
-/* ----------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
 /*                               TRAER PRODUCTOS                              */
 /* -------------------------------------------------------------------------- */
 export const getProducts = async () => {

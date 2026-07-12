@@ -1,16 +1,19 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCArGFGYV8fSY4aog51Op_G2xT85B0N2XI",
-  authDomain: "ecommerce-cf901.firebaseapp.com",
-  projectId: "ecommerce-cf901",
-  storageBucket: "ecommerce-cf901.firebasestorage.app",
-  messagingSenderId: "1012955938139",
-  appId: "1:1012955938139:web:8d325e4cb84174fcd86e7e"
+  apiKey: "AIzaSyCJdaxMSmRcwTdDS10GZbcXyEOMgrlF2Ts",
+  authDomain: "tp-c26122.firebaseapp.com",
+  projectId: "tp-c26122",
+  storageBucket: "tp-c26122.firebasestorage.app",
+  messagingSenderId: "280456659694",
+  appId: "1:280456659694:web:2f3201d78e64a2299be9ff",
 };
 
 // Initialize Firebase

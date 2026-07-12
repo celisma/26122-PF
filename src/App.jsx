@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Routes>
-        {/* ---------RUTAS PUBLICAS ------------*/}
+        {/* ----------------------RUTAS PUBLICAS -------------------------*/}
         <Route element={<PublicLayout />}>
           <Route path="/" element={<ItemListContainer />} />
           {/* Ruta opcional para filtrar categorias */}
@@ -28,7 +28,7 @@ function App() {
         {/* IMPORTAR EL COMPONENTE LOGIN */}
         <Route path="/admin/login" element={<Login />} />
        
-        {/* -------------------ADMIN------------------ */}
+        {/* -----------------------------ADMIN--------------------------- */}
         <Route
           path="/admin"
           element={
